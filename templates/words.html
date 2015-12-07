@@ -1,0 +1,14 @@
+
+{%for i in (words['max_length_word'][2:])%}
+<div class="col l2" style="padding:0px">
+	<table class="striped"	>
+		<tbody>
+			{%for ele in (words[loop.index+2])%}
+			<tr>
+				<td>{{ele}}</td>
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table>
+</div>
+{%endfor%}

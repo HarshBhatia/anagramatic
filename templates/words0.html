@@ -1,0 +1,32 @@
+
+ <table class="striped">
+        <thead>
+          <tr>
+   	 		{%for i in (words['max_length_word'])[2:]%}
+              <th data-field="id">{{loop.index+2}} Letters</th>
+        	{% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+        {%for i in (words['max_length_word'])[2:]%}
+        	<tr>
+            {%for ele in words[loop.index+2]%}
+            <td>ele</td>
+            {%endfor%}
+            </tr>
+       	{% endfor %}
+        <tr>
+        <td>Row 2 & 3, Column 1</td>
+        <td>Row 2, Column 2</td>
+        </tr>
+        <tr>	
+        <td >Row 3, Column 2</td>
+        </tr>
+			
+
+
+        	
+        </tbody>
+      </table>
+
+<!--  -->

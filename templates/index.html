@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Anagramatic!</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+</head>
+<body>
+	<!-- <h1>Enter Letters Here:</h1>
+	<input type="text" id="letters">
+	<button>Solve</button>
+
+	<div id="words"></div> -->
+
+	<div class="row container">
+		<h1>Anagramatic!</h1>
+		<div class="input-field col s12">
+		         <input id="letters" type="text">
+		         <label for="letters">Letters Here (10 max)</label>
+		         <div class="center-align">
+		         <a class="waves-effect waves-light btn-large" id="submit">Solve</a>
+		         </div>
+		<br>
+		<br>
+		</div>
+		<div id="words" class="row">
+		</div>		
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+
+	$("#submit").click(function(){
+		
+
+		$('#words').html("Loading...")
+
+		$.post("/solve",
+		{
+			letters: $('#letters').val(),
+
+		},
+		function(data, status){
+			$('#words').html(data)
+		});
+	});
+</script>
+</html>
