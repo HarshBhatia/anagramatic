@@ -13,7 +13,8 @@ def index():
 @app.route('/solve', methods=['POST', 'GET'])
 def solver():
     letters = request.form['letters']
-    return render_template('words.html', words=solve(letters))
+
+    return render_template('words.html', words=solve(letters.lower()))
 
 
 def solve(letters):
